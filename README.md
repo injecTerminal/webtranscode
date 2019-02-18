@@ -7,7 +7,7 @@
 | mysql   | @8.12以上  |
 | linux   | @cenOS7以上|
 ### 2.NodeJs环境安装
-```less
+```console
   //下载node压缩包
   wget https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz
   //解压
