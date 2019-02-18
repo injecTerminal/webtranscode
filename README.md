@@ -1,12 +1,22 @@
 项目部署文档
-==
-###  1.前提环境
-|   名称   |    版本    |
-|:-------:|:---------:|
-| node.js | @8.12.0以上|
-| mysql   | @8.12以上  |
-| linux   | @cenOS7以上|
-### 2.NodeJs环境安装
+=
+###  1. 前提环境
+|   名称   |      版本       |
+|:-------:|:---------------:|
+| node.js | @8.12.0         |
+| mysql   | @8.0.12 or @5.7 |
+| linux   | @cenOS7         |
+### 2. NodeJs 环境安装
+<p align="center">
+  <a href="https://nodejs.org/">
+    <img
+      alt="Node.js"
+      src="https://nodejs.org/static/images/logo-light.svg"
+      width="400"
+    />
+  </a>
+</p>
+
 ```console
   //下载node压缩包
 $ wget https://nodejs.org/dist/v10.15.1/node-v10.15.1-linux-x64.tar.xz
@@ -24,4 +34,28 @@ $ source ~/.bashrc
 $ node -v
 $ v8.12.0
 ```
-  
+### 3. Mysql 安装部署
+<p align="center">
+  <a href="https://www.mysql.com/" title="点击链接">
+    <img
+      alt="MySql"
+      src="https://dev.mysql.com/common/logos/mysql-logo.svg"
+      width="400"
+    />
+  </a>
+</p>
+
+```console
+  //下载mysql压缩包
+# wget http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+  //解压
+# tar xzvf mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+  //转移系统用户目录下并重命名
+# mv mysql-5.7.17-linux-glibc2.5-x86_64 /usr/share/mysql@5.7
+  //设置软链接
+# ln -s /usr/share/mysql@5.7 /usr/local/bin
+# systemctl status mysqld.service
+# systemctl start mysqld.service
+# mysql --version
+```
+
