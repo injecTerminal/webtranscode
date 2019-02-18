@@ -8,7 +8,7 @@
 | linux   | @cenOS7         |
 ### 2. NodeJs 环境安装
 <p align="center">
-  <a href="https://nodejs.org/">
+  <a href="https://nodejs.org/" title="点击链接" >
     <img
       alt="Node.js"
       src="https://nodejs.org/static/images/logo-light.svg"
