@@ -4,7 +4,7 @@
 |   名称   |      版本       |
 |:-------:|:---------------:|
 | node.js | @8.12.0         |
-| mysql   | @8.0.12 or @5.7 |
+| mysql   | @8.0.11 or @5.7 |
 | linux   | @cenOS7         |
 ### 2. NodeJs 环境安装
 <p align="center">
@@ -47,7 +47,7 @@ $ v8.12.0
 
 ```console
   //下载mysql压缩包
-# wget http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+# wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.11-1.el7.x86_64.rpm-bundle.tar
   //解压
 # tar xzvf mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
   //转移系统用户目录下并重命名
@@ -57,5 +57,18 @@ $ v8.12.0
 # systemctl status mysqld.service
 # systemctl start mysqld.service
 # mysql --version
+mysql  Ver 8.0.15 for Linux on x86_64 (MySQL Community Server - GPL)
+  //获取临时密码
+# grep 'password' /var/log/mysqld.log
+# 2019-02-20T04:57:27.888761Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: 75LBtK;s1f8K
+# mysql -uroot -p75LBtK\;s1f8K
+  //修改临时密码
+mysql> alter user 'root'@'localhost' identified by 'new_password';
+mysql> exit
+  //重启mysqld
+# systemctl restart mysqld.service
+# mysql -uroot -pnew_password
 ```
-
+* 具体参见
+  * __[MySQL@8.0](https://www.cnblogs.com/ruolin/p/9279944.html "链接")__
+  * __[MySQL@5.7](https://blog.csdn.net/qq_40550973/article/details/80721014 "链接")__
