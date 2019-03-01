@@ -5,7 +5,7 @@
 |:-------:|:---------------:|
 | node.js | @8.12.0         |
 | mysql   | @8.0.11 or @5.7 |
-| linux   | @cenOS7         |
+| linux   | @CentOS7         |
 ### 2. NodeJs 环境安装
 <p align="center">
   <a href="https://nodejs.org/" title="点击链接" >
@@ -49,11 +49,11 @@ $ v8.12.0
   //下载mysql压缩包
 # wget https://dev.mysql.com/get/Downloads/MySQL-8.0/mysql-8.0.11-1.el7.x86_64.rpm-bundle.tar
   //解压
-# tar xzvf mysql-5.7.17-linux-glibc2.5-x86_64.tar.gz
+# tar xf mysql-8.0.11-1.el7.x86_64.rpm-bundle.tar
   //转移系统用户目录下并重命名
-# mv mysql-5.7.17-linux-glibc2.5-x86_64 /usr/share/mysql@5.7
+# mv mysql-8.0.11-1.el7.x86_64.rpm-bundle /usr/share/mysql@8.0.11
   //设置软链接
-# ln -s /usr/share/mysql@5.7 /usr/local/bin
+# ln -s /usr/share/mysql@8.0.11 /usr/local/bin
 # systemctl status mysqld.service
 # systemctl start mysqld.service
 # mysql --version
